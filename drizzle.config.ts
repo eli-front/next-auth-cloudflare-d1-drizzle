@@ -4,6 +4,7 @@ import { config as dotenvConfig } from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 
+// https://github.com/drizzle-team/drizzle-orm/discussions/1545#discussioncomment-9642932
 function getLocalD1DB() {
   try {
     const basePath = path.resolve('.wrangler');
