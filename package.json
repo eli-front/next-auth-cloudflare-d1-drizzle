@@ -1,0 +1,49 @@
+{
+  "name": "market-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "bunx @cloudflare/next-on-pages",
+    "preview": "bun run pages:build && wrangler pages dev",
+    "deploy": "bun run pages:build && wrangler pages deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts",
+    "studio:dev": "drizzle-kit studio",
+    "studio:prd": "cross-env NODE_ENV=production drizzle-kit studio",
+    "generate": "drizzle-kit generate",
+    "migrate:dev": "drizzle-kit migrate",
+    "migrate:prd": "cross-env NODE_ENV=production drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@auth/d1-adapter": "^1.4.1",
+    "@auth/drizzle-adapter": "^1.4.1",
+    "@cloudflare/next-on-pages": "^1.12.1",
+    "@libsql/client": "^0.7.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.32.1",
+    "next": "14.2.5",
+    "next-auth": "^5.0.0-beta.19",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240718.0",
+    "@types/node": "^20.14.11",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.23.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5.5.3",
+    "vercel": "^35.1.0",
+    "wrangler": "^3.67.1"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
+  }
+}
